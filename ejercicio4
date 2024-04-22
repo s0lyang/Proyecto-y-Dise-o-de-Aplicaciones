@@ -1,0 +1,39 @@
+import javax.swing.*;
+
+public class ejercicio4 extends JFrame {
+     public ejercicio4() {
+        setTitle("Ejercicio 1.1");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        
+        JLabel resultLabel = new JLabel("Short: ");
+        JLabel resultado = new JLabel("Máximo y Minímo: ");
+
+            try {
+                 
+                short minimo = Short.MIN_VALUE;
+		short maximo = Short.MAX_VALUE;
+            
+                resultLabel.setText("Resultado de short: " + minimo + " " + maximo);
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Entrada inválida. Introduce un número válido.");
+            }
+
+        JPanel panel = new JPanel();
+ 
+        panel.add(resultado);
+    
+        panel.add(resultLabel);
+
+        add(panel);
+        setSize(600, 100);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            ejercicio4 ejercicio = new ejercicio4();
+            ejercicio.setVisible(true);
+        });
+    }
+}
