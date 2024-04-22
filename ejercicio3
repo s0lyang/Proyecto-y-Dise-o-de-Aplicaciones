@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class ejercicio3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc=new Scanner (System.in);
+		
+		int actual, nacido, resultado;
+		
+		System.out.print("Ingrese el año actual.");
+		actual=sc.nextInt();
+		
+		System.out.print("Ingrese el año de nacimiento.");
+		nacido=sc.nextInt();
+		
+		resultado=actual-nacido;
+		
+		System.out.print("Su edad es: "+resultado);
+		
+		
+
+	}
+
+}
