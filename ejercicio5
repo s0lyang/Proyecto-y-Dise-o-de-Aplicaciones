@@ -1,0 +1,55 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package proy;
+
+/**
+ *
+ * @author Usuario
+ */
+import javax.swing.*;
+public class ejercicio5  extends JFrame {
+    
+    public ejercicio5 () {
+        
+        setTitle("Ejercicio 5");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JLabel nota1=new JLabel("Ingrese una nota: ");
+        JLabel nota2=new JLabel("Ingrese otra nota: ");
+        JLabel resultado=new JLabel();
+        JTextField nt1=new JTextField(10);
+        JTextField nt2=new JTextField(10);
+        JButton boton=new JButton("Calcular.");
+        
+        boton.addActionListener(e-> {
+            try{
+              int note=Integer.parseInt(nt1.getText());
+              int note2=Integer.parseInt(nt2.getText());
+              int result=((note+note2)/2);
+              
+              resultado.setText("El resultado es: "+result);
+            }catch (NumberFormatException ex){
+                resultado.setText("Error.");
+            }
+        });
+        JPanel panel = new JPanel();
+        panel.add(nota1);
+        panel.add(nt1);
+        panel.add(nota2);
+        panel.add(nt2);
+        panel.add(boton);
+        panel.add(resultado);
+
+        add(panel);
+        pack();
+        setLocationRelativeTo(null);
+    } 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            ejercicio5 ejercicio = new ejercicio5();
+            ejercicio.setVisible(true);
+        });
+    }
+}
